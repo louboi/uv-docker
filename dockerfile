@@ -13,7 +13,7 @@ COPY . /app
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --locked
 
-FROM python:3.12-slim-trixie
+FROM python:3.15-slim-trixie
 
 RUN groupadd --system --gid 999 nonroot \
  && useradd --system --gid 999 --uid 999 --create-home nonroot
@@ -28,4 +28,4 @@ USER nonroot
 
 WORKDIR /app
 
-CMD ["fastapi", "run", "--host", "0.0.0.0", "src/uv_docker_example"]
+CMD ["python", "-m", "main"]

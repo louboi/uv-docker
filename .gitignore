@@ -1,0 +1,2 @@
+# Ignore the .venv folder when making commits
+.venv

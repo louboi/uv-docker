@@ -1,6 +1,18 @@
 # uv-docker
 Testing using docker to run python file using uv for development.
 
+## Usage
+How to build then run the image.
+### Building the image
+Make sure you are inside the uv-docker directory, the to build the image run:
+```bash
+docker buildx build -t discord-bot/discord-bot:latest .
+```
+
+### Using the image
+Use docker desktop, just press the run button on the image.
+You will have to make start a new container everytime you build a new image (for now at least).
+
 ## Dockerfile Breakdown
 ```dockerfile
 FROM ghcr.io/astral-sh/uv:python3.15-trixie-slim AS builder
